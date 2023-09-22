@@ -400,7 +400,7 @@ def _sqlite_md5(text):
 def _sqlite_mod(x, y):
     if x is None or y is None:
         return None
-    return fmod(x, y)
+    return fmod(float(x), float(y))
 
 
 def _sqlite_pi():
@@ -410,13 +410,13 @@ def _sqlite_pi():
 def _sqlite_power(x, y):
     if x is None or y is None:
         return None
-    return x**y
+    return float(x)**float(y)
 
 
 def _sqlite_radians(x):
     if x is None:
         return None
-    return radians(x)
+    return radians(float(x))
 
 
 def _sqlite_repeat(text, count):
@@ -470,25 +470,25 @@ def _sqlite_sha512(text):
 def _sqlite_sign(x):
     if x is None:
         return None
-    return (x > 0) - (x < 0)
+    return (float(x) > 0) - (float(x) < 0)
 
 
 def _sqlite_sin(x):
     if x is None:
         return None
-    return sin(x)
+    return sin(float(x))
 
 
 def _sqlite_sqrt(x):
     if x is None:
         return None
-    return sqrt(x)
+    return sqrt(float(x))
 
 
 def _sqlite_tan(x):
     if x is None:
         return None
-    return tan(x)
+    return tan(float(x))
 
 
 class ListAggregate(list):
